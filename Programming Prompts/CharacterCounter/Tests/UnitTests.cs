@@ -37,9 +37,9 @@ namespace Tests
         public void WhenCounterIsPassedThreeDifferentCharactersItShouldReturnCorrectDictionary()
         {
             Dictionary<Char, int> expected = new Dictionary<Char, int>();
+            expected.Add('c', 1);
             expected.Add('a', 1);
             expected.Add('b', 1);
-            expected.Add('c', 1);
 
             Dictionary<Char, int> actual = counter.Count("cab");
 
