@@ -18,7 +18,7 @@ namespace Tests
 
             Dictionary<Char, int> actual = counter.Count("a");
 
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -30,7 +30,7 @@ namespace Tests
 
             Dictionary<Char, int> actual = counter.Count("ab");
 
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -43,7 +43,7 @@ namespace Tests
 
             Dictionary<Char, int> actual = counter.Count("cab");
 
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -54,7 +54,7 @@ namespace Tests
 
             Dictionary<Char, int> actual = counter.Count("aa");
 
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
 
         [TestMethod]
@@ -65,7 +65,7 @@ namespace Tests
 
             Dictionary<Char, int> actual = counter.Count("aaAA");
 
-            Assert.AreEqual(expected, actual);
+            CollectionAssert.AreEqual(expected, actual);
         }
     }
 }
