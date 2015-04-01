@@ -1,0 +1,24 @@
+﻿<Window x:Class="GUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:this="clr-namespace:GUI"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <this:ViewModel x:Key="Context"></this:ViewModel>
+    </Window.Resources>
+    <StackPanel DataContext="{StaticResource Context}">
+        <TextBlock>Enter String Here:</TextBlock>
+        <TextBox Text="{Binding characters, Mode=TwoWay}"></TextBox>
+        <Button Command="{Binding countCommand}">Calculate</Button>
+        <ListView ItemsSource="{Binding result}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Key}"/>
+                        <TextBlock Text="{Binding Value}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackPanel>
+</Window>
