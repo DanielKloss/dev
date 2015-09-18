@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using Checkers;
+using System.Windows.Input;
+using CalculatorConsole;
 
 namespace Gui
 {
@@ -20,9 +22,33 @@ namespace Gui
             }
         }
 
+        private ICommand _pieceSingleMoveCommand;
+        public ICommand pieceSingleMoveCommand
+        {
+            get
+            {
+                if (_pieceSingleMoveCommand == null)
+                {
+                    _pieceSingleMoveCommand = new Command<Piece>(SingleMove, CanSingleMove);
+                }
+                return _pieceSingleMoveCommand;
+            }
+            set { _pieceSingleMoveCommand = value; }
+        }
+
         public ViewModel()
         {
             board = new Board();
+        }
+
+        public void SingleMove(Piece piece)
+        {
+            board.CanSingleMove(piece);
+        }
+
+        public bool CanSingleMove(Piece piece)
+        {
+            return true;
         }
 
         #region INPC
