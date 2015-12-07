@@ -1,8 +1,16 @@
-public class AlphabeticalOrder
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AlphabeticalOrderChecker
+{
+    public class AlphabeticalOrder
     {
-        private AlphabeticalOrder(string value) 
-        { 
-            Value = value; 
+        private AlphabeticalOrder(string value)
+        {
+            Value = value;
         }
         public string Value { get; set; }
 
@@ -11,7 +19,7 @@ public class AlphabeticalOrder
         public static AlphabeticalOrder ReverseOrder { get { return new AlphabeticalOrder("Reverse Order"); } }
     }
 
-    public static class AlphabeticalOrderChecker
+    public static class Checker
     {
         public static AlphabeticalOrder CheckWord(string input)
         {
@@ -29,3 +37,4 @@ public class AlphabeticalOrder
             };
         }
     }
+}
