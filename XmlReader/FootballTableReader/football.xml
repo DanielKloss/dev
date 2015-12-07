@@ -1,0 +1,32 @@
+<table>
+	<team>
+		<name>Arsenal</name>
+		<played>38</played>
+		<won>26</won>
+		<lost>9</lost>
+		<drawn>3</drawn>
+		<for>79</for>
+		<against>36</against>
+		<points>87</points>
+	</team>
+		<team>
+		<name>Liverpool</name>
+		<played>38</played>
+		<won>24</won>
+		<lost>8</lost>
+		<drawn>6</drawn>
+		<for>67</for>
+		<against>30</against>
+		<points>80</points>
+	</team>
+		<team>
+		<name>Manchester United</name>
+		<played>38</played>
+		<won>24</won>
+		<lost>5</lost>
+		<drawn>9</drawn>
+		<for>87</for>
+		<against>45</against>
+		<points>77</points>
+	</team>
+</table>
