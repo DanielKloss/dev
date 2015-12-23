@@ -34,10 +34,12 @@ namespace AdventOfCode.Runner
                     string[] numbers = measurement.Split('x');
 
                     dayTwo.FindSquareFeetNeeded(Convert.ToInt32(numbers[0]), Convert.ToInt32(numbers[1]), Convert.ToInt32(numbers[2]));
+                    dayTwo.FindRibbonNeeded(Convert.ToInt32(numbers[0]), Convert.ToInt32(numbers[1]), Convert.ToInt32(numbers[2]));
                 }
             }
 
             Console.WriteLine("Amount of wrapping paper the elves need: " + dayTwo.squareFeetNeeded);
+            Console.WriteLine("Amount of ribbon the elves need: " + dayTwo.ribbonNeeded);
             #endregion
 
             Console.ReadLine();

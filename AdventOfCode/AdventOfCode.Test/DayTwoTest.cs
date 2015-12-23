@@ -110,5 +110,101 @@ namespace AdventOfCode.Test
             //Assert
             Assert.AreEqual(expected, dayTwo.squareFeetNeeded);
         }
+
+        [TestMethod]
+        public void Test_FindRibbonNeeded_GivesTenRibbon_WhenGivenHeightTwoWidthThreeAndLengthFour()
+        {
+            //Arrange
+            int expected = 10;
+            int height = 2;
+            int width = 3;
+            int length = 4;
+
+            //Act
+            dayTwo.FindRibbonNeeded(height, width, length);
+
+            //Assert
+            Assert.AreEqual(expected, dayTwo.ribbon);
+        }
+
+        [TestMethod]
+        public void Test_FindRibbonNeeded_GivesTwentyFourRibbonBow_WhenGivenHeightTwoWidthThreeAndLengthFour()
+        {
+            //Arrange
+            int expected = 24;
+            int height = 2;
+            int width = 3;
+            int length = 4;
+
+            //Act
+            dayTwo.FindRibbonNeeded(height, width, length);
+
+            //Assert
+            Assert.AreEqual(expected, dayTwo.ribbonBow);
+        }
+
+        [TestMethod]
+        public void Test_FindRibbonNeeded_GivesThirtyFourRibbonBow_WhenGivenHeightTwoWidthThreeAndLengthFour()
+        {
+            //Arrange
+            int expected = 34;
+            int height = 2;
+            int width = 3;
+            int length = 4;
+
+            //Act
+            dayTwo.FindRibbonNeeded(height, width, length);
+
+            //Assert
+            Assert.AreEqual(expected, dayTwo.ribbonNeeded);
+        }
+
+        [TestMethod]
+        public void Test_FindRibbonNeeded_GivesFourRibbon_WhenGivenHeightTwoWidthThreeAndLengthFour()
+        {
+            //Arrange
+            int expected = 4;
+            int height = 1;
+            int width = 1;
+            int length = 10;
+
+            //Act
+            dayTwo.FindRibbonNeeded(height, width, length);
+
+            //Assert
+            Assert.AreEqual(expected, dayTwo.ribbon);
+        }
+
+        [TestMethod]
+        public void Test_FindRibbonNeeded_GivesTenRibbonBow_WhenGivenHeightTwoWidthThreeAndLengthFour()
+        {
+            //Arrange
+            int expected = 10;
+            int height = 1;
+            int width = 1;
+            int length = 10;
+
+            //Act
+            dayTwo.FindRibbonNeeded(height, width, length);
+
+            //Assert
+            Assert.AreEqual(expected, dayTwo.ribbonBow);
+        }
+
+        [TestMethod]
+        public void Test_FindRibbonNeeded_GivesFourteenRibbonBow_WhenGivenHeightTwoWidthThreeAndLengthFour()
+        {
+            //Arrange
+            int expected = 14;
+            int height = 1;
+            int width = 1;
+            int length = 10;
+
+            //Act
+            dayTwo.FindRibbonNeeded(height, width, length);
+
+            //Assert
+            Assert.AreEqual(expected, dayTwo.ribbonNeeded);
+        }
     }
 }
