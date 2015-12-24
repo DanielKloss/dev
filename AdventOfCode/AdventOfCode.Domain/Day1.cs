@@ -1,13 +1,13 @@
 ﻿
 namespace AdventOfCode.Domain
 {
-    public class DayOne
+    public class Day1
     {
         public int floor { get; set; }
         public bool basementFound { get; set; }
         public int basementInstruction { get; set; }
 
-        public DayOne()
+        public Day1()
         {
             floor = 0;
             basementFound = false;

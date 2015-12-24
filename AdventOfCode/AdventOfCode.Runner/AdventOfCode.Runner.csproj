@@ -55,7 +55,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DayTwoData.txt">
+    <Content Include="Day2Data.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day3Data.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

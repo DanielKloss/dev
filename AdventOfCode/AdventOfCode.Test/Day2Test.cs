@@ -5,14 +5,14 @@ using AdventOfCode.Domain;
 namespace AdventOfCode.Test
 {
     [TestClass]
-    public class DayTwoTest
+    public class Day2Test
     {
-        DayTwo dayTwo;
+        Day2 dayTwo;
 
         [TestInitialize]
         public void Setup()
         {
-            dayTwo = new DayTwo();
+            dayTwo = new Day2();
         }
 
         [TestMethod]

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.Domain
 {
-    public class DayTwo
+    public class Day2
     {
         public int squareFeet { get; set; }
         public int slack { get; set; }

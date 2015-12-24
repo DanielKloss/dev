@@ -9,11 +9,14 @@ namespace AdventOfCode.Runner
 {
     public class FileReader
     {
-        StreamReader reader = new StreamReader("DayTwoData.txt");
-        StringBuilder sb = new StringBuilder();
+        StreamReader reader;
+        StringBuilder sb;
 
-        public string Read()
+        public string Read(string path)
         {
+            reader = new StreamReader(path);
+            sb = new StringBuilder();
+
             do
             {
                 sb.Append(reader.ReadLine() + " ");

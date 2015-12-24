@@ -50,9 +50,10 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="DayOneTest.cs" />
+    <Compile Include="Day1Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DayTwoTest.cs" />
+    <Compile Include="Day2Test.cs" />
+    <Compile Include="Day3Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode.Domain\AdventOfCode.Domain.csproj">
