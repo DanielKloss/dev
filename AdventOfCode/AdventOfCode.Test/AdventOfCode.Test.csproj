@@ -55,6 +55,7 @@
     <Compile Include="Day2Test.cs" />
     <Compile Include="Day3Test.cs" />
     <Compile Include="Day4Test.cs" />
+    <Compile Include="Day5Test.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode.Domain\AdventOfCode.Domain.csproj">

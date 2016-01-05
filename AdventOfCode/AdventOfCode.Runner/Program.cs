@@ -52,9 +52,26 @@ namespace AdventOfCode.Runner
             Console.WriteLine("Number Of Houses Santa and the Robot Visit: " + dayThree.housesDeliveredTo);
             #endregion
 
+            #region DayFour
             Day4 dayFour = new Day4();
             Console.WriteLine("Advent Coin MD5 Hash Code with 5 Zeros: " + dayFour.MineAdventCoins("yzbqklnj", 5));
-            Console.WriteLine("Advent Coin MD5 Hash Code with 6 Zeros: " + dayFour.MineAdventCoins("yzbqklnj", 6));
+            //Console.WriteLine("Advent Coin MD5 Hash Code with 6 Zeros: " + dayFour.MineAdventCoins("yzbqklnj", 6));
+            #endregion
+
+            Day5 dayFive = new Day5();
+            string dayFiveTestData = reader.Read("Day5Data.txt");
+            string[] strings = dayFiveTestData.Split(' ');
+            int niceStringsCount = 0;
+
+            foreach (string naughtyOrNiceString in strings)
+            {
+                if (dayFive.IsStringNice(naughtyOrNiceString))
+                {
+                    niceStringsCount++;
+                }
+            }
+
+            Console.WriteLine("Number of nice strings: " + niceStringsCount);
 
             Console.ReadLine();
         }
