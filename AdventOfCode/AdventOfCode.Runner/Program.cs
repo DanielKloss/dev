@@ -52,6 +52,10 @@ namespace AdventOfCode.Runner
             Console.WriteLine("Number Of Houses Santa and the Robot Visit: " + dayThree.housesDeliveredTo);
             #endregion
 
+            Day4 dayFour = new Day4();
+            Console.WriteLine("Advent Coin MD5 Hash Code with 5 Zeros: " + dayFour.MineAdventCoins("yzbqklnj", 5));
+            Console.WriteLine("Advent Coin MD5 Hash Code with 6 Zeros: " + dayFour.MineAdventCoins("yzbqklnj", 6));
+
             Console.ReadLine();
         }
     }
