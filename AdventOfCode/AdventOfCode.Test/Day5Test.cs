@@ -7,12 +7,12 @@ namespace AdventOfCode.Test
     [TestClass]
     public class Day5Test
     {
-        Day5 dayThree;
+        Day5 dayFive;
 
         [TestInitialize]
         public void Setup()
         {
-            dayThree = new Day5();
+            dayFive = new Day5();
         }
 
         [TestMethod]
@@ -23,7 +23,7 @@ namespace AdventOfCode.Test
             bool expected = false;
 
             //Act
-            bool actual = dayThree.ContainsAtLeastThreeVowels(testInput);
+            bool actual = dayFive.ContainsAtLeastThreeVowels(testInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -37,7 +37,7 @@ namespace AdventOfCode.Test
             bool expected = true;
 
             //Act
-            bool actual = dayThree.ContainsAtLeastThreeVowels(testInput);
+            bool actual = dayFive.ContainsAtLeastThreeVowels(testInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -51,7 +51,7 @@ namespace AdventOfCode.Test
             bool expected = true;
 
             //Act
-            bool actual = dayThree.ContainsAtLeastThreeVowels(testInput);
+            bool actual = dayFive.ContainsAtLeastThreeVowels(testInput);
 
             //Assert
             Assert.AreEqual(expected, actual);
@@ -65,7 +65,7 @@ namespace AdventOfCode.Test
             bool expected = false;
 
             //act
-            bool actual = dayThree.ContainsADoubleLetter(testInput);
+            bool actual = dayFive.ContainsADoubleLetter(testInput);
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -79,7 +79,7 @@ namespace AdventOfCode.Test
             bool expected = true;
 
             //act
-            bool actual = dayThree.ContainsADoubleLetter(testInput);
+            bool actual = dayFive.ContainsADoubleLetter(testInput);
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -93,7 +93,7 @@ namespace AdventOfCode.Test
             bool expected = true;
 
             //act
-            bool actual = dayThree.ContainsADoubleLetter(testInput);
+            bool actual = dayFive.ContainsADoubleLetter(testInput);
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -107,7 +107,7 @@ namespace AdventOfCode.Test
             bool expected = true;
 
             //act
-            bool actual = dayThree.ContainsADoubleLetter(testInput);
+            bool actual = dayFive.ContainsADoubleLetter(testInput);
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -121,7 +121,7 @@ namespace AdventOfCode.Test
             bool expected = false;
 
             //act
-            bool actual = dayThree.ContainsNaughtyString(testInput);
+            bool actual = dayFive.ContainsNaughtyString(testInput);
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -135,7 +135,7 @@ namespace AdventOfCode.Test
             bool expected = true;
 
             //act
-            bool actual = dayThree.ContainsNaughtyString(testInput);
+            bool actual = dayFive.ContainsNaughtyString(testInput);
 
             //assert
             Assert.AreEqual(expected, actual);
@@ -149,9 +149,135 @@ namespace AdventOfCode.Test
             bool expected = true;
 
             //act
-            bool actual = dayThree.ContainsNaughtyString(testInput);
+            bool actual = dayFive.ContainsNaughtyString(testInput);
 
             //assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_ContainsAPairThatAppearsTwice_ReturnsTrueWhenPairsAreNotOverlapping()
+        {
+            //Arrange
+            string testInput = "qwertyqwasd";
+            bool expected = true;
+
+            //Act
+            bool actual = dayFive.ContainsAPairThatAppearsTwice(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_ContainsAPairThatAppearsTwice_ReturnsFalseWhenPairsAreOverlapping()
+        {
+            //Arrange
+            string testInput = "aaa";
+            bool expected = false;
+
+            //Act
+            bool actual = dayFive.ContainsAPairThatAppearsTwice(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_ContainsAPairThatAppearsTwice_ReturnsFalseWhenThereAreNoRepeatingPairs()
+        {
+            //Arrange
+            string testInput = "qwerty";
+            bool expected = false;
+
+            //Act
+            bool actual = dayFive.ContainsAPairThatAppearsTwice(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_ContainsARepeatingCharacterSeparatedByASingleCharacter_ReturnsTrueWhenARepeatedCharacterIsSeperatedByASingleCharacter()
+        {
+            //Arrange
+            string testInput = "aaa";
+            bool expected = true;
+
+            //Act
+            bool actual = dayFive.ContainsASeperatedRepeatingCharacter(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_ContainsARepeatingCharacterSeparatedByASingleCharacter_ReturnsFalseWhenARepeatedCharacterIsNotSeperatedByASingleCharacter()
+        {
+            //Arrange
+            string testInput = "aa";
+            bool expected = false;
+
+            //Act
+            bool actual = dayFive.ContainsASeperatedRepeatingCharacter(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_ContainsARepeatingCharacterSeparatedByASingleCharacter_ReturnsFalseWhenTheIsNoRepeatedCharacter()
+        {
+            //Arrange
+            string testInput = "abc";
+            bool expected = false;
+
+            //Act
+            bool actual = dayFive.ContainsASeperatedRepeatingCharacter(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_IsStringNiceWithUpdatedRules_ReturnsTrueWhenGivenAStringWithAPairAndARepeat()
+        {
+            //Arrange
+            string testInput = "qjhvhtzxzqqjkmpb";
+            bool expected = true;
+
+            //Act
+            bool actual = dayFive.IsStringNiceWithUpdatedRules(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_IsStringNiceWithUpdatedRules_ReturnsFalseWhenGivenAStringWithAPairButNoRepeat()
+        {
+            //Arrange
+            string testInput = "uurcxstgmygtbstg";
+            bool expected = false;
+
+            //Act
+            bool actual = dayFive.IsStringNiceWithUpdatedRules(testInput);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Test_IsStringNiceWithUpdatedRules_ReturnsFalseWhenGivenAStringWithARepeatButNoPair()
+        {
+            //Arrange
+            string testInput = "ieodomkazucvgmuy";
+            bool expected = false;
+
+            //Act
+            bool actual = dayFive.IsStringNiceWithUpdatedRules(testInput);
+
+            //Assert
             Assert.AreEqual(expected, actual);
         }
     }

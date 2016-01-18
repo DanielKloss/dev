@@ -25,5 +25,19 @@ namespace AdventOfCode.Runner
 
             return sb.ToString();
         }
+
+        public string ReadWithLineBreak(string path)
+        {
+            reader = new StreamReader(path);
+            sb = new StringBuilder();
+
+            do
+            {
+                sb.Append(reader.ReadLine() + Environment.NewLine);
+            }
+            while (reader.Peek() != -1);
+
+            return sb.ToString();
+        }
     }
 }

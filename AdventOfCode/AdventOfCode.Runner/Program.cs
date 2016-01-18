@@ -58,10 +58,12 @@ namespace AdventOfCode.Runner
             //Console.WriteLine("Advent Coin MD5 Hash Code with 6 Zeros: " + dayFour.MineAdventCoins("yzbqklnj", 6));
             #endregion
 
+            #region DayFive
             Day5 dayFive = new Day5();
             string dayFiveTestData = reader.Read("Day5Data.txt");
             string[] strings = dayFiveTestData.Split(' ');
             int niceStringsCount = 0;
+            int niceStringsWithUpdatedRulesCount = 0;
 
             foreach (string naughtyOrNiceString in strings)
             {
@@ -69,9 +71,31 @@ namespace AdventOfCode.Runner
                 {
                     niceStringsCount++;
                 }
+
+                if (dayFive.IsStringNiceWithUpdatedRules(naughtyOrNiceString))
+                {
+                    niceStringsWithUpdatedRulesCount++;
+                }
             }
 
             Console.WriteLine("Number of nice strings: " + niceStringsCount);
+            Console.WriteLine("Number of nice strings with updated rules: " + niceStringsWithUpdatedRulesCount); 
+            #endregion
+
+            Day6 daySix = new Day6();
+            daySix.CreateGrid();
+            daySix.CreateBrightnessGrid();
+            string daySixTestData = reader.ReadWithLineBreak("Day6Data.txt") + '\n';
+            string[] lights = daySixTestData.Split('\n');
+
+            foreach (string instruction in lights)
+            {
+                daySix.SplitInput(instruction);
+                daySix.LightRouter();
+            }
+
+            Console.WriteLine("There are " + daySix.CountNumberOfLightsOn() + " lights on");
+            Console.WriteLine("The total brightness of the lights is " + daySix.CalculateTotalBrightness());
 
             Console.ReadLine();
         }
