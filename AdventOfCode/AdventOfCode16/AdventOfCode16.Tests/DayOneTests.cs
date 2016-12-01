@@ -51,5 +51,20 @@ namespace AdventOfCode16.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Test_Input_R8R4R4R8_Give4Blocks_WhenLookingForCoordinate()
+        {
+            //Arrange
+            int expected = 4;
+            string input = "R8, R4, R4, R8";
+            DayOne dayOne = new DayOne();
+
+            //Act
+            int actual = dayOne.FindHqCoordinate(input);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
