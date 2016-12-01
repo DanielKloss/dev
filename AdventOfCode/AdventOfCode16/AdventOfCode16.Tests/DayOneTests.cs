@@ -16,10 +16,10 @@ namespace AdventOfCode16.Tests
             DayOne dayOne = new DayOne();
 
             //Act
-            int actual = dayOne.FindHqDistance(input);
+            dayOne.FindHq(input);
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, dayOne.hqDistance);
         }
         
         [TestMethod]
@@ -31,10 +31,10 @@ namespace AdventOfCode16.Tests
             DayOne dayOne = new DayOne();
 
             //Act
-            int actual = dayOne.FindHqDistance(input);
+            dayOne.FindHq(input);
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, dayOne.hqDistance);
         }
 
         [TestMethod]
@@ -46,10 +46,10 @@ namespace AdventOfCode16.Tests
             DayOne dayOne = new DayOne();
 
             //Act
-            int actual = dayOne.FindHqDistance(input);
+            dayOne.FindHq(input);
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, dayOne.hqDistance);
         }
 
         [TestMethod]
@@ -61,10 +61,10 @@ namespace AdventOfCode16.Tests
             DayOne dayOne = new DayOne();
 
             //Act
-            int actual = dayOne.FindHqCoordinate(input);
+            dayOne.FindHq(input);
 
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, dayOne.realHqDistance);
         }
     }
 }

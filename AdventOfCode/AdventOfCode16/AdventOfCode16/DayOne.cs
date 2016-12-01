@@ -28,6 +28,8 @@ namespace AdventOfCode16.Domain
 
     public class DayOne
     {
+        public int hqDistance;
+        public int realHqDistance;
         private Direction currentDirection = Direction.North;
         private Coordinate currentPosition = new Coordinate(0, 0);
         private List<Coordinate> allPositions;
@@ -37,41 +39,9 @@ namespace AdventOfCode16.Domain
             allPositions = new List<Coordinate> { currentPosition };
         }
 
-        public int FindHqDistance(string input)
+        public void FindHq(string input)
         {
-            int totalVertical = 0;
-            int totalHorizontal = 0;
-            List<string> directions = SplitInstructions(input);
-
-            foreach (string direction in directions)
-            {
-                FindNewDirection(direction.Substring(0, 1));
-                int blocks = Convert.ToInt32(direction.Substring(1));
-
-                switch (currentDirection)
-                {
-                    case Direction.North:
-                        totalVertical += blocks;
-                        break;
-                    case Direction.East:
-                        totalHorizontal += blocks;
-                        break;
-                    case Direction.South:
-                        totalVertical -= blocks;
-                        break;
-                    case Direction.West:
-                        totalHorizontal -= blocks;
-                        break;
-                    default:
-                        break;
-                }
-            }
-
-            return Math.Abs(totalVertical) + Math.Abs(totalHorizontal);
-        }
-
-        public int FindHqCoordinate(string input)
-        {
+            bool realHqFound = false;
             List<string> directions = SplitInstructions(input);
 
             foreach (string direction in directions)
@@ -82,32 +52,24 @@ namespace AdventOfCode16.Domain
                 {
                     currentPosition = FindNewPosition();
 
-                    if (allPositions.Contains(currentPosition))
+                    if (!realHqFound && allPositions.Contains(currentPosition))
                     {
-                        return Math.Abs(currentPosition.x) + Math.Abs(currentPosition.y);
+                        realHqDistance = Math.Abs(currentPosition.x) + Math.Abs(currentPosition.y);
+                        realHqFound = true;
                     }
                     else
                     {
                         allPositions.Add(currentPosition);
                     }
                 }
-            }
 
-            return 0;
+                hqDistance = Math.Abs(currentPosition.x) + Math.Abs(currentPosition.y);
+            }
         }
 
         private List<string> SplitInstructions(string input)
         {
-            List<string> directions = new List<string>();
-            List<string> instructions = input.Split(',').ToList();
-
-            foreach (string instruction in instructions)
-            {
-                string cleanInstruction = instruction.Trim(' ');
-                directions.Add(cleanInstruction);
-            }
-
-            return directions;
+            return input.Split(',').Select(x => x.Trim(' ')).ToList();
         }
 
         private void FindNewDirection(string instruction)
