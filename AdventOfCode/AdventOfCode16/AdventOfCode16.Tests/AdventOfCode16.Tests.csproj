@@ -53,6 +53,12 @@
     <Compile Include="DayOneTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdventOfCode16\AdventOfCode16.Domain.csproj">
+      <Project>{f870acec-4bcc-432c-a2cb-a20a659ef010}</Project>
+      <Name>AdventOfCode16.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
