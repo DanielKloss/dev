@@ -1,5 +1,6 @@
 ﻿using AdventOfCode16.Domain;
 using System;
+using System.IO;
 
 namespace AdventOfCode16.Runner
 {
@@ -9,7 +10,10 @@ namespace AdventOfCode16.Runner
         {
             DayOne();
 
-
+            string[] _dayTwoPuzzleInput = File.ReadAllLines(@"Inputs/DayTwoInput.txt");
+            DayTwo dayTwo = new DayTwo();
+            string code = dayTwo.FindToiletCode(_dayTwoPuzzleInput);
+            Console.WriteLine(string.Format("The code for the toilet is {0}", code));
 
             Console.ReadLine();
         }
