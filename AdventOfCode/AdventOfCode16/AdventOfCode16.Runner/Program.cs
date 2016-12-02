@@ -13,7 +13,9 @@ namespace AdventOfCode16.Runner
             string[] _dayTwoPuzzleInput = File.ReadAllLines(@"Inputs/DayTwoInput.txt");
             DayTwo dayTwo = new DayTwo();
             string code = dayTwo.FindToiletCode(_dayTwoPuzzleInput);
+            string realCode = dayTwo.FindRealToiletCode(_dayTwoPuzzleInput);
             Console.WriteLine(string.Format("The code for the toilet is {0}", code));
+            Console.WriteLine(string.Format("The real code for the toilet is {0}", realCode));
 
             Console.ReadLine();
         }

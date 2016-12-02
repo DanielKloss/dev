@@ -22,5 +22,20 @@ namespace AdventOfCode16.Tests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Test_Input_ReturnsRealCode5DB3()
+        {
+            //Arrange
+            string expected = "5DB3";
+            string[] input = File.ReadAllLines(@"DayTwoTestData.txt");
+            DayTwo dayTwo = new DayTwo();
+
+            //Act
+            string actual = dayTwo.FindRealToiletCode(input);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
