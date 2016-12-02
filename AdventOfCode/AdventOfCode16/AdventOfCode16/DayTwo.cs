@@ -141,34 +141,36 @@ namespace AdventOfCode16.Domain
             {
                 foreach (char direction in instruction)
                 {
+                    KeyPadButton key;
+
                     switch (direction)
                     {
                         case 'U':
-                            currentY = increase(currentY, 5);
-                            if (CheckForKeys())
-                            {
-                                currentY = decrease(currentY, 1);
-                            }
-                            break;
-                        case 'D':
-                            currentY = decrease(currentY, 1);
-                            if (CheckForKeys())
+                            key = realKeypad.SingleOrDefault(k => k.x == currentX && k.y == currentY + 1);
+                            if (key != null && key.value != ".")
                             {
                                 currentY = increase(currentY, 5);
                             }
                             break;
-                        case 'R':
-                            currentX = increase(currentX, 5);
-                            if (CheckForKeys())
+                        case 'D':
+                            key = realKeypad.SingleOrDefault(k => k.x == currentX && k.y == currentY - 1);
+                            if (key != null && key.value != ".")
                             {
-                                currentX = decrease(currentX, 1);
+                                currentY = decrease(currentY, 1);
+                            }
+                            break;
+                        case 'R':
+                            key = realKeypad.SingleOrDefault(k => k.x == currentX + 1 && k.y == currentY);
+                            if (key != null && key.value != ".")
+                            {
+                                currentX = increase(currentX, 5);
                             }
                             break;
                         case 'L':
-                            currentX = decrease(currentX, 1);
-                            if (CheckForKeys())
+                            key = realKeypad.SingleOrDefault(k => k.x == currentX - 1 && k.y == currentY);
+                            if (key != null && key.value != ".")
                             {
-                                currentX = increase(currentX, 5);
+                                currentX = decrease(currentX, 1);
                             }
                             break;
                     }
@@ -178,11 +180,6 @@ namespace AdventOfCode16.Domain
             }
 
             return builder.ToString();
-        }
-
-        private bool CheckForKeys()
-        {
-            return realKeypad.Single(k => k.x == currentX && k.y == currentY).value == ".";
         }
     }
 }
