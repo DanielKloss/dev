@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DayOneTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DayTwoTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdventOfCode16\AdventOfCode16.Domain.csproj">
