@@ -12,6 +12,8 @@ namespace AdventOfCode16.Runner
 
             DayTwo();
 
+            DayThree();
+
             Console.ReadLine();
         }
 
@@ -48,6 +50,21 @@ namespace AdventOfCode16.Runner
             string realCode = dayTwo.FindRealToiletCode(_dayTwoPuzzleInput);
             Console.WriteLine(string.Format("The code for the toilet is {0}", code));
             Console.WriteLine(string.Format("The real code for the toilet is actually in reality {0}", realCode));
+            Divider();
+        }
+
+        private static void DayThree()
+        {
+            Console.WriteLine();
+            Console.WriteLine("*** DAY THREE ***");
+            Console.WriteLine();
+
+            string[] _dayThreePuzzleInput = File.ReadAllLines(@"Inputs/DayThreeInput.txt");
+            DayThree dayThree = new DayThree();
+            int triangles = dayThree.CheckTriangles(_dayThreePuzzleInput);
+            int verticalTriangles = dayThree.CheckTrianglesVertically(_dayThreePuzzleInput);
+            Console.WriteLine(string.Format("There are {0} possible triangles", triangles));
+            Console.WriteLine(string.Format("There are {0} possible vertical triangles", verticalTriangles));
             Divider();
         }
     }
