@@ -12,7 +12,7 @@ namespace AdventOfCode16.Tests
         {
             //Arrange
             string expected = "1985";
-            string[] input = File.ReadAllLines(@"DayTwoTestData.txt");
+            string[] input = File.ReadAllLines(@"TestData/DayTwoTestData.txt");
             DayTwo dayTwo = new DayTwo();
 
             //Act
@@ -27,7 +27,7 @@ namespace AdventOfCode16.Tests
         {
             //Arrange
             string expected = "5DB3";
-            string[] input = File.ReadAllLines(@"DayTwoTestData.txt");
+            string[] input = File.ReadAllLines(@"TestData/DayTwoTestData.txt");
             DayTwo dayTwo = new DayTwo();
 
             //Act
