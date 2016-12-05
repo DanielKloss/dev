@@ -50,6 +50,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DayFourTests.cs" />
     <Compile Include="DayOneTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DayTwoTests.cs" />
@@ -62,6 +63,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="TestData\DayFourTestInput.txt" />
+    <Content Include="TestData\DayOneTestInput.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TestData\DayThreeTestData.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

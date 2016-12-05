@@ -37,10 +37,10 @@ namespace AdventOfCode16.Domain
             allPositions = new List<Coordinate> { currentPosition };
         }
 
-        public void FindHq(string input)
+        public void FindHq(string[] input)
         {
             bool realHqFound = false;
-            List<string> directions = SplitInstructions(input);
+            List<string> directions = SplitInstructions(input[0]);
 
             foreach (string direction in directions)
             {
