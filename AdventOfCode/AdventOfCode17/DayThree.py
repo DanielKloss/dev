@@ -1,4 +1,4 @@
-puzzleInput = 325489noSquareRootFound = TruesquareRoot = 1
+puzzleInput = 325489 noSquareRootFound = True squareRoot = 1
 while noSquareRootFound:  square = squareRoot * squareRoot
   if square > puzzleInput:    noSquareRootFound = False  else:    squareRoot += 2
 layerNumber = (squareRoot + 1) / 2
